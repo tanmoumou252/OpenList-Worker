@@ -1,0 +1,7 @@
+# 个人部署配置：同步上游时永远保留本仓库版本，防止 KV/D1 ID 被覆盖
+# 需先注册 merge driver（一次性，全局生效）：
+#   git config --global merge.ours.driver true
+# 注意：merge=ours 仅对 git merge / git pull（merge 模式）生效，rebase 不受保护。
+wrangler.jsonc merge=ours
+.dev.vars merge=ours
+.env merge=ours
